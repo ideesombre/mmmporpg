@@ -14,4 +14,6 @@ public class DiceRandom {
 		return r.nextInt(12)+1;
 	}
 	
+
+
 }
