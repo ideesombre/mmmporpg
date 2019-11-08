@@ -8,7 +8,7 @@ import scanner.Menu;
 public class Run {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+//		Scanner sc = new Scanner(System.in);
 		
 //		Characters mage = new Mage();
 //		System.out.println(mage.toString());
@@ -23,7 +23,7 @@ public class Run {
 //		System.out.println(warrior.toString());
 //		
 		
-		Menu.startGame(sc);
+		Menu.startGame();
 		
 //		Characters mage = new Mage();
 //		System.out.println(mage.toString());
