@@ -5,15 +5,10 @@ package characters;
  * @author Estelle
  *
  */
-public abstract class Characters {
+public abstract class Characters extends LivingThings {
 
-	private int level = 0;
-	protected int pv;  //different for each class
 	protected int xp = 0; // initialized at 0 when character created
 	private int xpNext = 100; // xp required to reach next level
-	protected int strength; //different for each class
-	protected int agility;  //different for each class
-	protected int intelligence;  //different for each class
 
 	/**
 	 * 
@@ -22,16 +17,15 @@ public abstract class Characters {
 	 * @param agility
 	 * @param intelligence
 	 */
-	public Characters(int pv, int strength, int agility, int intelligence) {
-		this.pv = pv;
-		this.strength = strength;
-		this.agility = agility;
-		this.intelligence = intelligence;
+	public Characters(int maxPv, int strength, int agility, int intelligence) {
+		super(maxPv, strength, agility, intelligence);
 	}
 
 	public void levelUp() {
 		level += 1; // update level
-		xpNext *= 1.10; // update xp required for next level
+		xpNext *= 1.10; // update xp required for next level by 10 %
+		maxPv *= 1.3; // update max PV by 30%
+		pv = maxPv;
 		xp = 0; // Reinitialize xp to zero
 	}
 
@@ -41,13 +35,7 @@ public abstract class Characters {
 				+ strength + ", agility=" + agility + ", intelligence=" + intelligence + "]";
 	}
 
-	public int getLevel() {
-		return level;
-	}
 
-	public int getPv() {
-		return pv;
-	}
 
 	public int getXp() {
 		return xp;
@@ -57,18 +45,7 @@ public abstract class Characters {
 		return xpNext;
 	}
 
-	public int getStrength() {
-		return strength;
-	}
 
-	public int getAgility() {
-		return agility;
-	}
-
-	public int getIntelligence() {
-		return intelligence;
-	}
-	
 
 
 }

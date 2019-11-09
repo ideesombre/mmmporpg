@@ -4,16 +4,17 @@ import java.util.Random;
 
 public class DiceRandom {
 
-	private Random r = new Random();
-	
-	public int d10() {
-		return r.nextInt(10)+1;
-	}
-	
-	public int d12() {
-		return r.nextInt(12)+1;
-	}
-	
+	private static Random r = new Random();
 
+	public static int d12() {
+		return r.nextInt(12) + 1;
+	}
 
+	public static boolean getRandPercent(int percent) {
+		return ( r.nextInt(100) +1 ) <= percent;
+	}
+
+	public static int getRandPercent() {
+		return r.nextInt(100) + 1;
+	}
 }
